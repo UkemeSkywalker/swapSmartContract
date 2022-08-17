@@ -49,13 +49,6 @@ contract swapERC20Token {
         return true;
     }
 
-     /**
-     * @dev Sets the price of a token where the price set should be 
-     * AToken / Altcoin price approximated 
-     * $10 / $0.13 = 76.9 -> 77
-     * @param symbol_ symbol of an ERC20 Token.
-     * @param price_ price ratio of AToken / Altcoin. 
-     */
     function addPrice(bytes32 symbol_, uint256 price_) public onlyOwner returns(bool){
         tokensPrice[symbol_] = price_;
     }
