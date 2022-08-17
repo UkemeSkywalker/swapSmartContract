@@ -44,16 +44,16 @@ contract swapERC20Token {
 
 
 
-    function addNewToken(bytes23 symbol_, address address_) public onlyOwner returns(bool){
+    function addNewToken(bytes23 symbol_, address address_) public  returns(bool){
         tokens[symbol_] = address_;
         return true;
     }
 
-    function addPrice(bytes32 symbol_, uint256 price_) public onlyOwner returns(bool){
+    function addPrice(bytes32 symbol_, uint256 price_) public  returns(bool){
         tokensPrice[symbol_] = price_;
     }
 
-    function addDecimal(bytes32 symbol_, uint decimals) public onlyOwner returns(bool){
+    function addDecimal(bytes32 symbol_, uint decimals) public returns(bool){
         tokensDecimals[symbol_] = 10**uint(decimals);
     }
 
@@ -74,7 +74,7 @@ contract swapERC20Token {
         return(tokensDecimals[symbol_]);
     }
 
-    function forContract(address address_) public onlyOwner{
+    function forContract(address address_) public {
         tokenContract = address_;
     }
 
